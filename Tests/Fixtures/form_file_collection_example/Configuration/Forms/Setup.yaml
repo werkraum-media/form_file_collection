@@ -1,0 +1,14 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          10: EXT:form_file_collection_example/Configuration/Forms/
+
+      prototypes:
+        standard:
+          formElementsDefinition:
+            FileCollection:
+              renderingOptions:
+                # Allows to switch between different rendering like "Checkbox", "MultiCheckbox" or "RadioButton", etc.
+                templateName: 'MultiCheckbox'

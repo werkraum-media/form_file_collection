@@ -1,0 +1,68 @@
+{
+    "name": "werkraummedia/form-file-collection",
+    "description": "Add a form element to render file collection to EXT:form of TYPO3",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://github.com/werkraum-media/form_file_collection",
+    "support": {
+        "docs": "https://docs.typo3.org/p/werkraummedia/form_file_collection/master/en-us/",
+        "email": "coding@daniel-siepmann.de",
+        "issues": "https://github.com/werkraum-media/form_file_collection/issues",
+        "source": "https://github.com/werkraum-media/form_file_collection"
+    },
+    "authors": [
+        {
+            "name": "Daniel Siepmann",
+            "email": "coding@daniel-siepmann.de",
+            "homepage": "https://daniel-siepmann.de/",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WerkraumMedia\\FormFileCollection\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WerkraumMedia\\FormFileCollection\\Tests\\": "Tests/",
+            "WerkraumMedia\\FormFileCollectionExample\\": "Tests/Fixtures/form_file_collection_example/Classes/"
+        }
+    },
+    "require": {
+        "php": "~8.0.0 || ~8.1.0 || ~8.2.0",
+        "typo3/cms-backend": "^11.5 || ^12.4",
+        "typo3/cms-core": "^11.5 || ^12.4",
+        "typo3/cms-fluid-styled-content": "^11.5 || ^12.4",
+        "typo3/cms-form": "^11.5 || ^12.4",
+        "typo3/cms-frontend": "^11.5 || ^12.4"
+    },
+    "require-dev": {
+        "codappix/typo3-php-datasets": "^1.3",
+        "friendsofphp/php-cs-fixer": "^3.11",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "saschaegerer/phpstan-typo3": "^1.8",
+        "typo3/testing-framework": "^7.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "lock": false,
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true,
+            "ocramius/package-versions": true,
+            "phpstan/extension-installer": true,
+            "cweagans/composer-patches": true
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "app-dir": ".Build",
+            "extension-key": "form_file_collection",
+            "web-dir": ".Build/web"
+        }
+    }
+}
