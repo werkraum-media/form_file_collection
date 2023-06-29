@@ -15,7 +15,7 @@
     stopOnIncomplete="false"
     stopOnSkipped="false"
     verbose="false"
-    >
+>
 
     <testsuites>
         <testsuite name="functional">

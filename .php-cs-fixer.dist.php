@@ -49,6 +49,7 @@ return (new \PhpCsFixer\Config())
         'phpdoc_no_package' => true,
         'phpdoc_scalar' => true,
         'phpdoc_trim' => true,
+        'phpdoc_separation' => true,
         'phpdoc_types' => true,
         'phpdoc_types_order' => ['null_adjustment' => 'always_last', 'sort_algorithm' => 'none'],
         'return_type_declaration' => ['space_before' => 'none'],

@@ -8,7 +8,7 @@ Concept
 =======
 
 The form element will fetch the configured file collection and assign proper options based on the contained files.
-That allows for using existing templates that allow to select one or multiple options.
+That allows using existing templates that allow to select a single or multiple options.
 
 EXT:form integration
 ====================

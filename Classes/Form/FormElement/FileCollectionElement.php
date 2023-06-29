@@ -45,6 +45,7 @@ final class FileCollectionElement extends AbstractFormElement
 
     /**
      * @param array<string, string> $configuration
+     *
      * @return array<string, string>
      */
     public function getOptions(array $configuration): array
