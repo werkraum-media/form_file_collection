@@ -51,7 +51,7 @@ class FormIntegrationTest extends FunctionalTestCase
         $this->importPHPDataSet(__DIR__ . '/../Fixtures/BasicDatabase.php');
         $this->setUpFrontendRootPage(1, [
             'setup' => [
-                'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript',
+                'EXT:form_file_collection/Tests/Fixtures/Rendering.typoscript',
                 'EXT:form_file_collection_example/Configuration/TypoScript/Form.typoscript',
             ],
         ]);

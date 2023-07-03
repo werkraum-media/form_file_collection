@@ -4,7 +4,3 @@ plugin.tx_form.settings.yamlConfigurations {
     80 = EXT:form_file_collection/Configuration/Form/Setup.yaml
     90 = EXT:form_file_collection_example/Configuration/Forms/Setup.yaml
 }
-
-page >
-page = PAGE
-page.10 =< styles.content.get
