@@ -1,0 +1,6 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:form/Configuration/TypoScript/setup.typoscript">
+
+plugin.tx_form.settings.yamlConfigurations {
+    80 = EXT:form_file_collection/Configuration/Form/Setup.yaml
+    90 = EXT:form_file_collection_example/Configuration/Forms/Setup.yaml
+}

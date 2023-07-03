@@ -1,0 +1,16 @@
+{
+    "name": "werkraummedia/form-file-collection-example",
+    "description": "Example usage of form file collection",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "*",
+        "typo3/cms-form": "*",
+        "werkraummedia/form-file-collection": "*"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "form_file_collection_example"
+        }
+    }
+}
