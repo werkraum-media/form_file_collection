@@ -12,3 +12,8 @@ TYPO3:
               renderingOptions:
                 # Allows to switch between different rendering like "Checkbox", "MultiCheckbox" or "RadioButton", etc.
                 templateName: 'MultiCheckbox'
+            FileCollectionCustomTemplate:
+              implementationClassName: WerkraumMedia\FormFileCollection\Form\FormElement\FileCollectionElement
+              renderingOptions:
+                # Use custom template, ensure it can be found within partialRootPaths
+                templateName: 'Custom'

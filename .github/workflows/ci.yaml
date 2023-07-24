@@ -131,6 +131,9 @@ jobs:
             sleep 1
           done
 
+      - name: Install graphicsmagick
+        run: sudo apt-get install -y graphicsmagick
+
       - name: Install dependencies
         run: composer req "typo3/cms-core:${{ matrix.typo3-version }}" --prefer-dist --no-progress --no-interaction
 
