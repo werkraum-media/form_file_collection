@@ -1,0 +1,36 @@
+renderingOptions:
+  submitButtonLabel: Submit
+  partialRootPaths:
+    20: EXT:form_file_collection_example/Resources/Private/Partials/
+type: Form
+identifier: test
+label: Test
+prototypeName: standard
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: First Step
+    renderables:
+      -
+        type: FileCollectionCustomTemplate
+        identifier: file-collection-1
+        label: 'File Collection'
+        properties:
+          fileCollection:
+            uid: 1
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: 'Example text field'
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: SummaryPage
+    identifier: summarypage-1
+    label: 'Summary step'

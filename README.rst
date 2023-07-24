@@ -22,6 +22,24 @@ Use a free identifier:
        80 = EXT:form_file_collection/Configuration/Form/Setup.yaml
    }
 
+No template is configured by default, choose one of the existing ones or provide your own:
+
+.. code:: yaml
+
+   TYPO3:
+     CMS:
+       Form:
+         prototypes:
+           standard:
+             formElementsDefinition:
+               FileCollection:
+                 renderingOptions:
+                   # Allows to switch between different rendering like "Checkbox", "MultiCheckbox" or "RadioButton", etc.
+                   templateName: 'MultiCheckbox'
+
+The existing templates will work out of the box.
+An additional variable `files` is added for usage within custom templates.
+
 This will register a new form element type ``FileCollection`` that can be used like this:
 
 .. code:: yaml
@@ -41,20 +59,7 @@ This will register a new form element type ``FileCollection`` that can be used l
          # Defines the property to use as label for form element.
          labelProperty: 'identifier'
 
-No template is configured by default, choose one of the existing ones or provide your own:
-
-.. code:: yaml
-
-   TYPO3:
-     CMS:
-       Form:
-         prototypes:
-           standard:
-             formElementsDefinition:
-               FileCollection:
-                 renderingOptions:
-                   # Allows to switch between different rendering like "Checkbox", "MultiCheckbox" or "RadioButton", etc.
-                   templateName: 'MultiCheckbox'
+The two options `valueProperty` and `labelProperty` are used to prepare the `options` variable used by the available default templates.
 
 Example
 -------

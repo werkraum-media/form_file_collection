@@ -36,7 +36,7 @@ final class FileCollectionElement extends AbstractFormElement
     public function setProperty(string $key, $value): void
     {
         if ($key === 'fileCollection' && is_array($value)) {
-            $this->setProperty('options', $this->getOptions($value));
+            $this->setFileCollection($value);
             return;
         }
 
@@ -44,11 +44,21 @@ final class FileCollectionElement extends AbstractFormElement
     }
 
     /**
+     * @param array<string, string> $value
+     */
+    private function setFileCollection(array $value): void
+    {
+        $files = $this->getFiles($value);
+        $this->setProperty('files', $files);
+        $this->setProperty('options', $this->getOptions($value, $files));
+    }
+
+    /**
      * @param array<string, string> $configuration
      *
-     * @return array<string, string>
+     * @return FileInterface[]
      */
-    public function getOptions(array $configuration): array
+    private function getFiles(array $configuration): array
     {
         $uid = (int)($configuration['uid'] ?? 0);
         $collection = $this->getRepository()->findByUid($uid);
@@ -60,12 +70,20 @@ final class FileCollectionElement extends AbstractFormElement
             $collection->loadContents();
         }
 
-        $options = [];
-        foreach ($collection->getItems() as $file) {
-            if (!$file instanceof FileInterface) {
-                continue;
-            }
+        return $collection->getItems();
+    }
 
+    /**
+     * @param array<string, string> $configuration
+     * @param FileInterface[] $files
+     *
+     * @return array<string, string>
+     */
+    public function getOptions(array $configuration, array $files): array
+    {
+        $options = [];
+
+        foreach ($files as $file) {
             $options = $this->addOption($configuration, $options, $file);
         }
 

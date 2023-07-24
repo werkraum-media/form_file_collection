@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+    <formvh:renderRenderable renderable="{element}">
+        <f:render partial="Field/Field" arguments="{element: element}" contentAs="elementContent">
+            <f:for each="{element.properties.files}" as="file" iteration="idIterator">
+                <f:form.checkbox
+                    property="{element.identifier}"
+                    multiple="1"
+                    id="{element.uniqueIdentifier}-{idIterator.index}"
+                    class="{element.properties.elementClassAttribute}"
+                    value="{file.title}"
+                    errorClass="{element.properties.elementErrorClassAttribute}"
+                    additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+                />
+                {file.properties.title}
+                {file.properties.description}
+                <f:image image="{file}" width="100"/>
+            </f:for>
+        </f:render>
+    </formvh:renderRenderable>
+
+</html>

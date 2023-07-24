@@ -119,4 +119,21 @@ class FormIntegrationTest extends FunctionalTestCase
         self::assertStringContainsString('value="29b827d0daa29658d8a0d952dfd20f559bbe3bcf"', $content);
         self::assertStringContainsString('<span>image/png</span>', $content);
     }
+
+    /**
+     * @test
+     */
+    public function rendersCustomTemplateWithAccessToFiles(): void
+    {
+        $this->importPHPDataSet(__DIR__ . '/../Fixtures/CustomTemplate.php');
+
+        $request = new InternalRequest();
+        $request = $request->withPageId(3);
+
+        $response = $this->executeFrontendRequest($request);
+
+        $content = $response->getBody()->__toString();
+        self::assertStringContainsString('name="tx_form_formframework[test-3][file-collection-1][]" value="Example title for form"', $content);
+        self::assertStringContainsString('<img src="/fileadmin/_processed_/2/9/csm_FirstResult_0f8fa1bb68.png" width="100" height="40" alt="Alternative" title="Example title for form" />', $content);
+    }
 }
